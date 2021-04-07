@@ -11,7 +11,7 @@ const AddProduct = () => {
             imageURL: imageURL,
             price: data.price
         };
-        const url = `http://localhost:5055/addProduct`;
+        const url = `https://shrouded-refuge-30415.herokuapp.com/addProduct`;
         
 
         fetch(url, { 
