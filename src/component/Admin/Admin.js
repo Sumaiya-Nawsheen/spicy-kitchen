@@ -6,10 +6,10 @@ import AddProduct from './AddProduct';
 const Admin = () => {
     return (
         <div>
-            <NavBar/>
-           <h1> Hello Admin</h1>
-           <AddProduct/>
-           
+            <NavBar />
+            <h1> Hello Admin</h1>
+            <AddProduct />
+
         </div>
     );
 };

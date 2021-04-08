@@ -7,9 +7,8 @@ import CardActions from '@material-ui/core/CardActions';
 import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import { red } from '@material-ui/core/colors';
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import CardActionArea from '@material-ui/core/CardActionArea';
 
 const useStyles = makeStyles((theme) => ({
@@ -33,18 +32,12 @@ const useStyles = makeStyles((theme) => ({
     expandOpen: {
       transform: 'rotate(180deg)',
     },
-    avatar: {
-      backgroundColor: red[500],
-    },
+   
   }));
 
 
   export default function FoodItems({foodItem}) {
     const classes = useStyles();
-    const history = useHistory()
-    const handleBook = (title) => {
-        history.push(`/checkout/${title}`);
-    }
 
     return (
         <div>
@@ -70,9 +63,9 @@ const useStyles = makeStyles((theme) => ({
         <IconButton aria-label="price">
           <AttachMoneyIcon />: {foodItem.price} 
         </IconButton>
-        <Button onClick={() => handleBook(foodItem.title)}  variant="contained" color="primary">
+        <Link to = {`/checkout/${foodItem._id}`}><Button   variant="contained" color="primary">
             Order now
-        </Button>
+        </Button></Link>
       </CardActions>
     </Card>
         </div>

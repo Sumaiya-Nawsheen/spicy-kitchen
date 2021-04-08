@@ -4,7 +4,7 @@ import NavBar from '../NavBar/NavBar';
 const Deals = () => {
     return (
         <div>
-            <NavBar/>
+            <NavBar />
             <h1> Check your Deals!</h1>
         </div>
     );

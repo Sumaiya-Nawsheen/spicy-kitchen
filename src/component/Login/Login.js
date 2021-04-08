@@ -9,12 +9,13 @@ import Google from '../../images/Group 573.png'
 
 if (firebase.apps.length === 0) { firebase.initializeApp(firebaseConfig); }
 const Login = () => {
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const { value1 } = useContext(UserContext);
+    const [loggedInUser, setLoggedInUser] = value1;
     const history = useHistory();
     const location = useLocation();
     const { from } = location.state || { from: { pathname: "/" } };
 
-    
+
     const handleGoogleSignIn = () => {
         const googleProvider = new firebase.auth.GoogleAuthProvider();
         firebase.auth()
@@ -41,10 +42,10 @@ const Login = () => {
     return (
         <div>
             <NavBar></NavBar>
-            <div className="mt-5" style={{ textAlign: "center"}}>
-               <h2> Login With </h2>
-                <button onClick={handleGoogleSignIn} style={{ borderRadius: "15px"}}><img src={Google} alt="" style={{width:'15%', height:'25%'}}/>  Continue with Google </button>
-               
+            <div className="mt-5" style={{ textAlign: "center" }}>
+                <h2> Login With </h2>
+                <button onClick={handleGoogleSignIn} style={{ borderRadius: "15px" }}><img src={Google} alt="" style={{ width: '15%', height: '25%' }} />  Continue with Google </button>
+
             </div>
         </div>
     );

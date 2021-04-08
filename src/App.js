@@ -24,38 +24,40 @@ function App() {
     photo: ''
   });
 
+  const [orderedItem, setOrderedItem] = useState([]);
+
   return (
     <div>
-      <UserContext.Provider value={ [loggedInUser, setLoggedInUser] }>
-     <Router>
-     
-        <Switch>
-         
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/home">
-                <Home/>
-           </Route>
-           <Route path="/login">
-                <Login/>
-           </Route>
-           <PrivateRoute path="/orders">
-             <Orders/>
-           </PrivateRoute>
-           <PrivateRoute path="/admin">
-             <Admin/>
-           </PrivateRoute>
-           <PrivateRoute path="/deals">
-             <Deals/>
-           </PrivateRoute>
-           <PrivateRoute path="/checkout">
-             <CheckOut/>
-           </PrivateRoute>
-        </Switch>
-      
-    </Router>
-    </UserContext.Provider>
+      <UserContext.Provider value={{ value1: [loggedInUser, setLoggedInUser], value2: [orderedItem, setOrderedItem] }}>
+        <Router>
+
+          <Switch>
+
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/home">
+              <Home />
+            </Route>
+            <Route path="/login">
+              <Login />
+            </Route>
+            <PrivateRoute path="/orders">
+              <Orders />
+            </PrivateRoute>
+            <PrivateRoute path="/admin">
+              <Admin />
+            </PrivateRoute>
+            <PrivateRoute path="/deals">
+              <Deals />
+            </PrivateRoute>
+            <PrivateRoute path="/checkout/:_id">
+              <CheckOut />
+            </PrivateRoute>
+          </Switch>
+
+        </Router>
+      </UserContext.Provider>
     </div>
   );
 }
