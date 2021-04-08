@@ -7,7 +7,7 @@ const TotalOrder = () => {
     const [loggedInUser, setLoggedInUser] = value1;
     console.log(loggedInUser.email)
     useEffect(() => {
-        fetch('http://localhost:5055/totalOrders?email=' + loggedInUser.email)
+        fetch('https://shrouded-refuge-30415.herokuapp.com/totalOrders?email=' + loggedInUser.email)
             .then(res => res.json())
             .then(data => setTotalOrders(data));
     }, [])

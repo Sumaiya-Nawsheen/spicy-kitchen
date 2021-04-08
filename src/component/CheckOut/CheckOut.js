@@ -56,7 +56,7 @@ const CheckOut = () => {
 
     console.log(_id)
     useEffect(() => {
-        fetch(`http://localhost:5055/checkout/${_id}`)
+        fetch(`https://shrouded-refuge-30415.herokuapp.com/checkout/${_id}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data)

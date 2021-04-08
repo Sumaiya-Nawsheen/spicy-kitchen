@@ -14,7 +14,7 @@ const Orders = () => {
 
     const orderDetail = { ...loggedInUser, ...orderedItem, orderDate };
 
-    fetch("http://localhost:5055/addOrders", {
+    fetch("https://shrouded-refuge-30415.herokuapp.com/addOrders", {
         method: 'POST',
         headers: { "Content-Type": 'application/json' },
         body: JSON.stringify(orderDetail)
